@@ -13,9 +13,8 @@ import {
 export default function App() {
   const [rates, setRates] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [mode, setMode] = useState("Buy"); // "Buy" ou "Sell"
+  const [mode, setMode] = useState("Buy"); 
 
-  // Valores de exemplo do usuário
   const holdings = {
     USD: 250,
     EUR: 200,
@@ -31,7 +30,6 @@ export default function App() {
         );
         const data = await response.json();
 
-        // Formatar os dados da API
         const formatted = {};
         Object.keys(data).forEach((key) => {
           const item = data[key];
@@ -182,7 +180,6 @@ export default function App() {
   );
 }
 
-// Helpers
 function toBRL(num) {
   if (isNaN(num)) return "0,00";
   return Number(num).toLocaleString("pt-BR", {
